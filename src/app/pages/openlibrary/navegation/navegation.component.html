@@ -1,0 +1,14 @@
+<!-- navegation.component.html -->
+<nav aria-label="Paginación de libros">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <button class="page-link" (click)="onPrevious.emit()">Anterior</button>
+    </li>
+    <li class="page-item disabled">
+      <span class="page-link">Página</span>
+    </li>
+    <li class="page-item">
+      <button class="page-link" (click)="onNext.emit()">Siguiente</button>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,24 @@
+<div class="container my-4">
+
+  <!-- Componente de búsqueda -->
+  <app-search (searchBooks)="onSearch($event)"></app-search>
+
+
+  <app-navegation (onNext)="onNextPage()" (onPrevious)="onPreviousPage()">
+  </app-navegation>
+
+
+  <div class="row g-4">
+    <app-modal
+  *ngIf="selectedBook"
+    [book]="selectedBook"
+    (cerrar)="closeModal()">
+</app-modal>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of books">
+      <app-card [book]="book" (viewDetails)="openModal($event)"></app-card>
+    </div>
+  </div>
+
+
+</div>

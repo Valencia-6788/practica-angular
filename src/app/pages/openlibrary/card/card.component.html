@@ -1,0 +1,35 @@
+<div class="row g-3">
+  <div class="col-20 col-md-10">
+    <div class="card fixed-card">
+
+      <div *ngIf="!imageLoad">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="72"
+          height="72" style="shape-rendering: auto; display: block; background: rgb(255, 255, 255);"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g>
+            <g>
+              <path stroke-width="2" stroke="#5c5c5c" fill="none" d="M50 33A17 17 0 1 0 67 50"></path>
+              <path fill="#5c5c5c" d="M49 29L49 37L53 33L49 29"></path>
+              <animateTransform keyTimes="0;1" values="0 50 50;360 50 50" dur="0.9523809523809523s"
+                repeatCount="indefinite" type="rotate" attributeName="transform"></animateTransform>
+            </g>
+            <g></g>
+          </g>
+        </svg>
+      </div>
+      
+      <img [src]="book.imgUrl" class="card-img-top fixed-img" alt="{{ book.title }}" loading="lazy" (load)="imageLoad=true">
+      <div class="card-body fixed-body">
+        <h5 class="card-title">{{ book.title }}</h5> 
+        <p class="card-text">
+          
+        </p>
+        <div class="container">
+        </div>
+        <button class="btn btn-primary" (click)="onViewDetails()">Ver más</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>

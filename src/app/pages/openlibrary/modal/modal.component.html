@@ -1,0 +1,20 @@
+<div class="modal-backdrop show"></div>
+<div class="modal d-block" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ book.title }}</h5>
+        <button type="button" class="btn-close" (click)="cerrar.emit()" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <img [src]="imgUrl" class="img-fluid mb-3" alt="Portada del libro">
+        <p><strong>Autor:</strong> {{ author }}</p>
+        <p><strong>Editor:</strong> {{ publisher }}</p>
+        <p><strong>Primera publicación:</strong> {{ firstPublishDate }}</p>
+        <p><strong>Clave:</strong> {{ book.key }}</p>
+        
+
+      </div>
+    </div>
+  </div>
+</div>
