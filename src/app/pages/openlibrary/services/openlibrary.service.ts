@@ -31,14 +31,12 @@ export class OpenlibraryService {
     });
   }
   
-
-  // Búsqueda de libros por texto
   searchBooks(query: string = 'a'): Observable<Books> {
-    const url = `${this.baseUrl}?q=${encodeURIComponent(query)}&fields=key,title,author_name,first_publish_year,publisher,cover_edition_key&limit=12`;    console.log(url);
+    const url = `${this.baseUrl}?q=${encodeURIComponent(query)}&fields=key,title,author_name,first_publish_year,publisher,cover_edition_key&limit=1`;    console.log(url);
     return this.http.get<Books>(url);
   }
 
-  // Detalles de un libro por su clave
+
   getBookDetails(workKey: string): Observable<BookDetails> {
     const url = `https://openlibrary.org${workKey}.json`;
     return this.http.get<BookDetails>(url);
